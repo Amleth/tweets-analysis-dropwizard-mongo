@@ -1,0 +1,13 @@
+mongo:
+  host: localhost
+  port: 27017
+  db: hdr
+  collection: tweets
+
+# Logging settings.
+logging:
+  level: INFO
+  loggers:
+    com.artisiou.hdr.analysis: DEBUG
+  appenders:
+    - type: console
