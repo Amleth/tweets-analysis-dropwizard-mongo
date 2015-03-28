@@ -1,3 +1,8 @@
+#
+# SERVICE
+#
+
+# Database
 mongo:
   host: localhost
   port: 27017
@@ -11,3 +16,18 @@ logging:
     com.artisiou.hdr.analysis: DEBUG
   appenders:
     - type: console
+
+#
+# CORPUS
+#
+
+textfilters:
+  - name: tdg
+    regex:
+      - '(?iu).*th[eé]orie *(du|des) *#?"*[g|d|…|3].*'
+      - '(?iu).*théo…$'
+
+links:
+  - 'https?:[^\s]+'
+  - 'htt?p?s?:?…$'
+  - '[^\s]+html'
